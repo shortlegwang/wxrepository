@@ -1,0 +1,17 @@
+.nocartpdiv span{
+	padding: 10px 20px;
+}
+.nocartpdiv i{
+	font-size: 1em;
+    color: #223300;
+    margin-right: 20px;
+}
+.nocartpdiv a{
+	color: #8cddf8;
+}
+
+.right_sidefloat{
+	float: right;
+}
+.rightdivChange{height: 44px;
+width: 60%;}

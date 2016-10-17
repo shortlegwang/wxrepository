@@ -1,0 +1,19 @@
+.red{
+	
+	
+	color: red;
+}
+.xinxin{
+	margin-top: 44px;
+	height: 30px;
+	width: 100%;
+	border: 1px solid red;
+	line-height: 30px;
+	margin-left: 5px;
+	background-color: #fff;
+}
+
+.reciveMantxt{
+	height: 30px;
+	float: left;
+}

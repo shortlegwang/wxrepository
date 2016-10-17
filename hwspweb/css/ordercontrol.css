@@ -1,0 +1,179 @@
+.slogsummoney{
+	height: 60px;
+	line-height: 60px;
+	margin-right: 10px;
+}
+.slogcommitorder{
+	overflow: hidden;
+
+	background-color: red;
+	margin: 0px 0px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.4em;
+    padding: 0px 20px;
+    color: #FFF;
+}
+.slogsummoney span{
+	color: #FF5053;
+}
+.slogcontractman{
+	/*height: 58px;*/
+	width: 100%;
+	height: 32px;
+}
+
+.slogcontractmanname{
+	/*height: 48px;
+	line-height: 48px;*/
+	/*font-size: 1.4em;*/
+	font-weight: bold;
+	/*padding: 5px 10px;*/
+	padding: 0;
+		font-size:1.2em;
+		height: 32px;
+		line-height: 32px;
+}
+
+.slogcontractmanphone{
+	/*height: 48px;
+	line-height: 48px;*/
+	/*font-size: 1.4em;*/
+	font-weight: bold;
+	/*padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;*/
+	padding: 0;
+		font-size:1.2em;
+		height: 32px;
+		line-height: 32px;
+}
+
+.slogcontractman a{
+	padding-left: 10px;
+}
+.slogcontractarrowright{
+	
+	margin: 5px 10px;
+}
+.slogcontractline{
+	/*height: auto;*/
+	/*background-color: red;*/
+	height: 8px;
+	margin-bottom: 10px;
+	background:url(../img/cart/address_bg_03.png)  repeat left center;
+}
+.slog-color-type{
+	margin-right: 10px;
+}
+.slog-price-red{
+	color: red;
+	padding: 10px 0px;
+}
+.slog-amout-productcount{
+	padding: 10px 0px;
+}
+.slogpaystyle{
+	clear: both;
+}
+.slogpaystyle span{
+	font-weight: bold;
+	color: #333;
+}
+.slogsellerMessage{
+	padding-top: 20px;
+}
+
+.slogpaystyle span i{
+	color: #999;
+}
+.sloglilinesegment{
+	height: 1px;
+	margin-top: 20px;
+	background:#c8c7cc  repeat left center;
+}
+.slogdivsegmentbotoom{
+	margin-bottom: 2px;
+}
+
+.slog-address-save{
+	background-color: red;
+	height: 46px;
+	line-height: 46px;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 1.6em;
+	font-stretch: expanded;
+}
+.slogaddresssegment{
+	background-color: #999;
+	height: 20px;
+	width: 100%;
+	margin-top: -1px;
+}
+.slog-address-type{
+	color: #999;
+	margin-right: 20px;
+}
+
+.slogaddressitemgap{
+	margin-bottom: 10px;
+}
+
+.per_search dd {
+    width: 50px;
+    /*float: right;*/
+    height: 30px;
+    background: #555;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.per_search input {
+    width: 205px;
+    height: 26px;
+    border: 1px solid #fff;
+    color: #999;
+    margin-left: 15px;
+    -webkit-box-flex:1;
+    
+}
+
+.per_search {
+	margin-top: 6px;
+	margin-bottom: 6px;
+    width: 270px;
+    height: 30px;
+    display:-webkit-box; 
+}
+
+.recivemanIntext{
+	/*float: left;*/
+	height: 30px;
+	width: 81px;
+	line-height: 30px;
+	/*border: 1px red red;*/
+}
+
+.reciveInputNameTxt{
+	height: 30px;
+	-webkit-box-flex:1;
+	/*text-align: center;*/
+}
+.addrlscls{
+	margin-bottom: 46px;
+}
+.pcoment{
+	display: block;
+    margin-left: 100px;
+    padding: 5px 0px;
+}
+.pcommenttitle{
+	float: left;
+    padding: 10px 0px;
+    color: red;
+    display: inline-block;
+}

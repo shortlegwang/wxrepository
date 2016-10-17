@@ -1,0 +1,21 @@
+.bggrey {
+    background-color: #fafafa;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+.personal_collclass {
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.floatdiv{
+	float: left;
+}
+
+.bgwhite
+{
+	background-color:#fff;
+}

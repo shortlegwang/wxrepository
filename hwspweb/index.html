@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/own.css"/>
+   	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+   	<link rel="stylesheet" href="css/slogcommon.css" />
+   	<link rel="stylesheet" href="path/to/weui/dist/style/weui.min.css"/>
+   	
+   	<style type="text/css">
+		.mui-active .mui-icon,
+		.mui-active .mui-tab-label {
+			color: #41cea9;
+		}
+		/*弹框的高度*/
+		.mui-popover {
+			height: 300px;
+			width: 100%;
+			bottom: 0px;
+		}
+		
+		
+   	</style>
+</head>
+<body class="own-gray-color"> 
+    
+    
+    <nav class="mui-bar mui-bar-tab navbgmy ">
+        <a class="mui-tab-item mui-active my-home-test" href="barItem/mallHome.html">
+            <span class="mui-icon iconfont icon-homeicon" ></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item my-category-test" href="barItem/category.html">
+            <span class="mui-icon iconfont icon-classicon" ></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item my-find-test" href="barItem/findinmall.html">
+            <span class="mui-icon iconfont icon-founicon" ><!--<span class="mui-badge"></span>--></span>
+            <span class="mui-tab-label">发现</span>
+        </a>
+        <a class="mui-tab-item my-cart-test" href="cart/cartHome.html">
+            <span class="mui-icon iconfont icon-buyicon "><span class="mui-badge gwcnum nodisplaybtn">5</span></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item my-mine-test" href="barItem/perindex.html">
+            <span class="mui-icon iconfont icon-myicon"><!--<span class="mui-badge">--></span></span>
+            <span class="mui-tab-label">我的</span>
+        </a>
+    </nav>
+    
+    
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+    <script type="text/javascript" charset="UTF-8">
+    mui.init({
+    	swipeBack:true
+    })
+    
+    var navTitle = null;
+//	var mainWebview = null;
+	var curBarItemWebview = null;
+	var loginwebview = null;
+		
+	var barItemWebviewArray = [];
+	var barItemArray = ['barItem/mallHome.html','barItem/category.html','barItem/findinmall.html','cart/cartHome.html','barItem/perindex.html'];
+	var selIdx = 0;//默认第一个选中
+	mui.plusReady(function(){
+		initIndexView();
+	});
+	
+	//初始化
+	function initIndexView(){
+		//初始化所有bar页面
+		inittabitemWebviews();
+		//添加bar点击事件接受
+		tapBaritem();
+	}
+	
+	//初始化所有bar页面
+		function inittabitemWebviews(){
+			for (var i = 0; i < barItemArray.length; i++) {
+				barItemWebviewArray[i] = mui.preload({
+					id:barItemArray[i],
+					url:barItemArray[i],
+					styles:{
+						top:'0px',
+						bottom: '51px',
+						left: '0px',
+						bounce: 'vertical',
+						bounceBackground: '#f8f8f8'
+					},
+					waiting:{
+						autoShow:false
+					}
+				});
+				barItemWebviewArray[i].hide();
+//				mainWebview.append(barItemWebviewArray[i]);
+			}
+			barItemWebviewArray[0].show();
+			curBarItemWebview = barItemWebviewArray[0];
+		}
+		
+		
+		
+		
+		function goC(val,clsIn){
+			var idx = 0;
+//			console.log("----" + val);
+//			console.log("-=====" + clsIn);
+			for (var i = 0; i<barItemArray.length; i++) {
+				if(barItemArray[i] == val){
+					idx = i;
+					break;
+				}
+			}
+//			var baritem = $('.mui-bar-tab a');
+			var page_current = document.querySelector(".mui-bar-tab .mui-active")
+			//$(".mui-bar-tab>.mui-tab-item .mui-active");
+			var default_Sel = document.querySelector('.' + clsIn);
+//			var baritemurl = baritem.getAttribute('href'); 
+//			console.log("-----" + clsIn);
+			if (default_Sel !== page_current) {
+//				page_current.removeClass("mui-active");
+				page_current.classList.remove("mui-active");
+				default_Sel.classList.add("mui-active");
+			}
+//			console.log(page_current);
+			barItemWebviewArray[idx].show();
+			curBarItemWebview = barItemWebviewArray[i];
+			
+		}
+		
+		//添加点击事件
+		function tapBaritem(){
+			mui('.mui-bar-tab').on('tap','.mui-tab-item',function(){
+				var baritem = this;
+				var baritemurl = baritem.getAttribute('href'); 
+				//indexof()如果为false返回－1所以前面加上~
+				if (!~curBarItemWebview.getURL().indexOf(baritemurl)) {
+					for (var i = 0; i < barItemArray.length; i++) {
+//						console.log("------" + i + "--" + barItemArray[i] + "\r\n");
+						if (barItemArray[i] == baritemurl) {
+							//当点击发现，购物车，我的的时候，首先要判断是否登录成功过
+							if(barItemArray[i] == 'cart/cartHome.html' || barItemArray[i] == 'barItem/mine.html'){
+								
+//								localStorage.setItem('flag',-1);
+								//登录成功过
+								if(localStorage.getItem('flag') != 1 ){
+									 mui.openWindow({
+										url:"mine/login.html",
+										id:'mine/login.html',
+					//					waiting{
+					//						autoShow:false
+					//					},
+										createNew:false
+									});
+								}else{
+									localStorage.setItem("sel",""+i);
+									barItemWebviewArray[i].show();
+									curBarItemWebview = barItemWebviewArray[i];
+									if(barItemArray[i] == 'cart/cartHome.html'){
+//										//购物车业务逻辑处理
+									}
+									if(barItemArray[i] == 'barItem/perindex.html'){
+//										//个人中心业务逻辑处理
+									}
+									
+								}
+							}else{
+								barItemWebviewArray[i].show();
+								curBarItemWebview = barItemWebviewArray[i];
+							}
+							
+							break;
+						}
+					}
+				}
+				
+			});
+		}
+		
+		
+		//预加载template
+		function initTemplate(){
+			var webview =  mui.preload({
+				id:'template',
+				url:'template.html',
+				styles:{
+					top: '-1000px',
+				}
+			});
+			webview.show();
+		};
+		
+		function judgelogin() {
+			
+			//测试语句
+			localStorage.removeItem('user');
+			//判断是否已经登录成功//localstorage在页面关闭的时候也同样存在，sessionstorage页面关闭数据不存在
+			if (!localStorage.getItem('user')) {
+				mui.later(function(){
+				loginwebview = mui.preload({
+					url:'mine/login.html',
+					id:'mine/login.html',
+					styles:{
+						top:'0px',
+						bottom:'0px'
+					},
+					waiting:{
+						autoShow:true,
+						title:'正在加载...'
+					}
+				}),200});
+			}
+		}
+		
+		//首页返回键处理
+		//处理逻辑：1秒内，连续两次按返回键，则退出应用；
+		var first = null;
+		mui.back = function() {
+			
+			//首次按键，提示‘再按一次退出应用’
+			if (!first) {
+				first = new Date().getTime();
+				mui.toast('再按一次退出应用');
+				setTimeout(function() {
+					first = null;
+				}, 1000);
+			} else {
+				if (new Date().getTime() - first < 1000) {
+//					plus.runtime.quit();
+					//程序退出，网页版本需要修改
+				}
+			}
+			
+		};
+		
+		window.addEventListener("backIndexAction",function(data){
+			console.log("---" +　data);
+			if(data != null){
+				
+			//初始化与index有关的页面
+			initIndexView();
+				
+			//检测是否需要显示导航页面todo
+				
+			//判断是否已经登陆,若没有登陆将预加载登陆页面
+			//judgelogin();
+			
+			//预加载父子模版
+//			initTemplate();
+			}
+		},false);
+		
+		function gwcNumUpdate(num){
+//			console.log("num-------" + num);
+//			var inum = parseInt(num);
+//			console.log("num===" +num);
+//			console.log(inum!=);
+			if(num != 0 && num != '0'){
+				document.querySelector('.gwcnum').classList.remove('nodisplaybtn');
+				document.querySelector('.gwcnum').innerText=num;
+			}else{
+				document.querySelector('.gwcnum').classList.add('nodisplaybtn');
+			}
+		}
+		
+//		autoTpWindowsPop();
+		function autoTpWindowsPop(closeflag){
+			if(closeflag){
+				document.querySelector('.navbgmy').classList.add('mui-hidden');
+			}else{
+				document.querySelector('.navbgmy').classList.remove('mui-hidden');
+			}
+			
+		}
+    </script>
+    
+    <!--<header class="mui-bar mui-bar-nav own-main-background-color"">
+        <h1 class="mui-title">首页</h1>
+    </header>-->
+    
+    
+</body>
+</html>

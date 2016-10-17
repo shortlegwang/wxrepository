@@ -1,0 +1,49 @@
+.blue{
+	color: #2c9734;
+}
+.reciverMessagedv a{
+    outline: medium none;
+    text-decoration: none;
+}
+.reciverMessagedv{
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
+.bg{
+	background-color: white;
+	border-bottom: 1px solid #666;
+}
+.recvaddress{
+	font-size: 14px;
+	font-weight: bold;
+	font-family: "宋体";
+}
+.m20{
+	 margin-bottom: 10px;
+}
+.m8{
+	padding: 5px;
+	/*margin-top: 10px;*/
+}
+.m9{
+	width: 100%;
+	height: 21px;
+}
+.m1{
+	    margin: 5px 5px;
+    padding: 5px 10px;
+    
+    display: block;
+    float: left;
+    outline: medium none;
+    text-decoration: none;
+    
+}
+
+.m2{
+	overflow: hidden;
+}
+.m4{
+	padding-bottom: 50px;
+}

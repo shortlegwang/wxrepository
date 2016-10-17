@@ -1,0 +1,156 @@
+li{
+	list-style-type:none;
+}
+
+/*返回顶部*/
+.back_top{ width:80px; height:80px; position: fixed; bottom:60px; right:20px; float:right; z-index:48;
+/*border: 1px solid red;*/}
+
+.sloggouwuchebtn{
+	background-color: #ff4c00;
+	
+}
+.slogbuytext{
+	color: #FFF
+}
+
+
+/*发现——优质商家*/
+.merchant_dian{ width:100%; overflow:hidden; /*padding:10px;*/ padding-bottom:0px; box-sizing:border-box; }
+.merchant_mian{ overflow:hidden; background:#fff; padding-top:20px; box-sizing: border-box;}
+.merchant_top{ overflow:hidden; width:100%; /*padding-bottom:20px; border-bottom:1px solid #dfdfdf;*/}
+.merchant_l{ float:left; width:28%; overflow:hidden; border:1px solid #999; box-sizing:border-box;}
+.merchant_l img{ width:100%; border:1px solid #dfdfdf; height:100%;}
+.merchant_r{ float:right; width:70%; overflow:hidden;}
+.merchant_r dl{ display:block; overflow:hidden;}
+.merchant_r dt{ float:left; width:70%; font-size:1em; font-weight:bold; color:#333; overflow:hidden; height:20px; line-height:20px; /*margin-bottom:5px;*/}
+.merchant_r button{ float: right;}
+.merchant_r p { color:#777; height:20px; line-height:20px; font-size:1em;}
+.merchant_r p span{ display:block; float:left; height:20px; line-height:20px;}
+.merchant_r p img{ height:20px;}
+.merchant_bottom{ width:100%; overflow:hidden; padding-top:20px;}
+.merchant_bottom ul{ display:block; width:100%;}
+.merchant_bottom li{ float:left; width:33%; padding-right:20px; box-sizing:border-box;}
+.merchant_bottom li img{ width:100%; height:100%;}
+
+.slogmerchant_l{
+	float:left; width:28%; overflow:hidden; box-sizing:border-box;
+}
+.slogstoreimgcss img{
+	height: 20px;
+	width: auto;
+}
+.slogstoreimgcss{
+	clear: both;
+}
+.slogstoreimgcss span{
+	display: block;
+	float:left;
+	height: 24px;
+	line-height: 24px;
+	
+}
+
+.slogbtngunzhu{
+	height: 24px;
+	
+}
+.slogstoreimgcss i{
+	/*background-image: "../img/product/merchant—img_06.png",;*/ 
+	background:url(../img/product/merchant—img_06.png) transparent no-repeat 0px 0px;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-size:85%;
+}
+.slogfindmallimg img{
+	height: 45px;
+	
+}
+
+/*发现—人才*/
+.join_warp{ width:100%; overflow: hidden; padding-top:10px; background:#fff; box-sizing:border-box; font-size:1em; color:#333; margin-bottom:10px;}
+.join_warp div{ display:block; font-size:1em;}
+.join_warp p{ overflow:hidden;font-size:1em; /*padding:5px 0;*/}
+.join_warp p span{ font-size:1em; color:#ff3c3c; }
+.join_warp dl{ height:32px; line-height:32px; overflow:hidden;}
+.join_warp dt{ float:left; width:75%; overflow:hidden;}
+.join_warp dd{ padding-right:5px;}
+.join_warp  .add_bg{ padding-left:20px; /*background:url(images/add_bg_03.png)*/ no-repeat left; background-size:15%;}
+.join_warp dd{ float:right;}
+.slogstorerankcs{
+	/*margin-top: 45px;*/
+	/*text-align: ;*/
+	margin-top: 20px;
+	padding: 5px 10px;
+	/*padding-left: 10px;
+	padding-right: 10px;*/
+	height: 80px;
+}
+.slogstorebgdiv{
+	/*background-color: red;*/
+	height: 125px;
+	width: 100%;
+	margin-top: 45px;
+}
+
+.merchant_l{
+				border: 1px solid transparent
+			}
+.registerprotocolinfo{
+	color: #2AC845;
+	font-size: 0.8em;
+}
+.registerprotocloinfoheader{
+	font-size: 0.9em;
+}
+.registercheckboxcls{
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+.text_head_title{
+	font-size: 1em;
+	text-align: left;
+	color: #333;
+}
+
+
+/***************************产品规格*************************************/
+.staand_name_w{display:-webkit-box; margin-bottom:10px;}
+.staand_name_w dt{ width:100px; text-align:right; line-height:36px;}
+.staand_name_w dd{-webkit-box-flex:1; overflow:hidden;}
+.staand_name_w dd p{ line-height:36px;}
+.staand_name_w dd a{ display:block; float:left; overflow:hidden; line-height:34px; margin-bottom:10px; margin-right:20px; padding:0 10px; box-sizing:border-box; border:1px solid #dfdfdf; white-space:nowrap;}
+/*.staand_name_w dd a:hover{ border:1px solid #ff3c3c; color:#ff3c3c; background:url(../img/product/chooseiocn_03.png) no-repeat right bottom;}*/
+.staand_name_w div{-webkit-box-flex:1; overflow:hidden;}
+.aisactivestate{
+	border:1px solid #ff3c3c; color:#ff3c3c; 
+}
+.aactivenostate{
+	border: 2px dashed #D6D6D8;    
+	color: #CDCDCD;
+	/*cursor: not-allowed;*/
+}
+
+.aaactiveSelect{
+	 color: #666;
+	 border: 2px solid #e4393c;
+	 background:url(../img/product/chooseiocn_03.png) no-repeat right bottom;
+}
+
+.nodisplaybtn{
+	display: none;
+}
+.small_title{
+	padding: 8px;
+}
+
+.slogwhitebg{
+	background-color: white;
+}
+
+.imgcssmaxlen{
+	max-width: 100px;
+    max-height: 80px;
+}
