@@ -1,15 +1,16 @@
 //var commUrl = "http://192.168.1.111";
 //var commUrltest = "http://192.168.1.176";
 //var commUrl = "http://120.24.100.226";
-var  commUrl ="http://www.hlejzy.com";//华绿商城
+//var  commUrl ="http://www.hlejzy.com";//华绿商城
 //var commUrl = "http://xtqspx.com";//青山皮鞋
 //var commUrl = "http://localhost";
+var commUrl = "http://localhost:4710";
 //var commPort = "4712";
 //var commPorttest = "10166";
 //var commPort = "213"
 //var commPort = "888";
 var commImageBaseUrl = "/Upload_Files/";
-var industryId = 1;
+var industryId = 2;
 
 (function(w){
 	
@@ -23,7 +24,9 @@ var industryId = 1;
 			mui.ajax(reqUrl,
 					{
 						data:dataJson,
-						dataType:"json",
+//						dataType:"JSON",
+						dataType:"JSONP",
+						jsonpCallback: "jsonpcallback",
 						type:'GET',
 						crossDomain:true,
 						timeout:10000,
@@ -46,7 +49,9 @@ var industryId = 1;
 //		console.log(JSON.stringify(options));
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
+//			dataType:"JSONP",
+//			jsonpCallback: "jsonpcallback",
 			type:'GET',
 			timeout:10000,//超时时间设置为10秒；
 			success:function(data){
@@ -58,7 +63,7 @@ var industryId = 1;
 				console.log("error------------" + xhr + "--" + type +"  " + errorThrown);
 			}
 		});
-	}
+	});
 	
 	//+ ":" + commPort 
 	w.ajax_login_other = function(suburl,options,fn){
@@ -66,7 +71,7 @@ var industryId = 1;
 //		console.log(urlAll);
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
 			type:'GET',
 //			async:false,
 			timeout:10000,//超时时间设置为10秒；
@@ -79,7 +84,7 @@ var industryId = 1;
 				console.log("error------------" + xhr + "--" + type +"  " + errorThrown);
 			}
 		});
-	}
+	});
 	
 	//+ ":" + commPort 
 	w.ajax_login_other_Post = function(suburl,options,fn){
@@ -87,7 +92,7 @@ var industryId = 1;
 //		console.log(urlAll);
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
 			type:'GET',
 //			async:false,
 			timeout:10000,//超时时间设置为10秒；
@@ -116,7 +121,7 @@ var industryId = 1;
 //		console.log(urlAll);
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
 			type:'GET',
 			async:false,
 			timeout:10000,//超时时间设置为10秒；
@@ -137,7 +142,8 @@ var industryId = 1;
 //		console.log(urlAll);
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
+			
 			type:'GET',
 			timeout:10000,//超时时间设置为10秒；
 			success:function(data){
@@ -157,7 +163,7 @@ var industryId = 1;
 //		console.log(urlAll);
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
 			type:'GET',
 			async:false,
 			timeout:10000,//超时时间设置为10秒；
@@ -179,7 +185,8 @@ var industryId = 1;
 		var initParam = initParam;
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
+			
 			type:'GET',
 			async:false,
 			timeout:10000,//超时时间设置为10秒；
@@ -201,7 +208,7 @@ var industryId = 1;
 //		console.log("option==" + JSON.stringify(options));
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
 			type:'GET',
 			async:false,
 			timeout:10000,//超时时间设置为10秒；
@@ -222,7 +229,8 @@ var industryId = 1;
 		console.log("option==" + JSON.stringify(options));
 		mui.ajax(urlAll,{
 			data:options,
-			dataType:"json",
+			dataType:"JSON",
+			
 			type:'GET',
 			async:false,
 			timeout:10000,//超时时间设置为10秒；
