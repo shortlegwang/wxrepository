@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/slidenews.css" />
+    <!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+   	<link rel="stylesheet" href="../css/iconfont.css" />
+   	
+   	<script type="text/javascript" src="../js/jquery1.42.min.js" ></script>
+   	<script type="text/javascript" src="../js/jquery.SuperSlide.2.1.1.js" ></script>
+   	<script src="../js/netjs.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+	<style type="text/css">
+		
+		/*.mui-slider{
+			height: 150px;
+		}*/
+		.mui-title-bg{
+			background-color: rgb(255,255,255);
+		}
+		.mui-title-header{
+			background: transparent;
+		}
+		
+		.mui-right-menu-test{
+			position: relative;
+			right: 0;
+			top: 0;
+			height: 90px;
+			width: 80px;
+		}
+		.mui-table-view:after{
+			background-color: #FFFFFF;
+		}
+		
+		.mui-table-view.mui-grid-view{
+			padding: 0;
+		}
+		
+		.mui-scroll{
+			position: static;
+		}
+		/*.mui-table-view-cell{
+			padding: 0;
+		}*/
+		
+		.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+			background-color: #fff;
+			border-right:1px,solid,#fff;
+			border-bottom: 1px solid #fff;
+		}
+		
+		.mui-bar{
+			border-bottom: 1px solid transparent;
+			webkit-box-shadow: 0 0 1px rgba(255,255,255,0.0);
+			box-shadow: 0 0 1px rgba(255,255,255,0);
+			padding-right:0px;
+			padding-left: 0px;
+			height: 49px;
+			background-color: #FF500A;
+		}
+		
+		.mui-bar-nav{
+			box-shadow: 0px,0px,0px,transparent;
+			webkit-box-shadow: 0 1px 6px #fff0;
+		}
+		
+		#slider{
+			margin-top: 49px;
+		}
+		
+		.padddiv{
+    			padding: 0px 10px;
+    			background: #e5e5e5;
+    		}
+    	.hotrecommd{
+    		background: #e5e5e5 url(../img/line_03.png) repeat-x center center;
+			height: 35px;
+			width: 100%;
+			text-align: center;
+    	}
+    	.spancls{
+    			height: 35px;
+    			line-height: 35px;
+    			width: 90px;
+    			margin: 0 auto;
+    			background: #e5e5e5;
+    			padding: 0px 5px;
+    		}
+
+	</style>
+
+<body>
+		
+    		
+	        
+	       <div class="mui-content">
+	       	
+	       	
+	       	
+			<!--这里放置真实显示的DOM内容-->
+			 
+	       	<header class="mui-bar mui-bar-nav mui-title-header">
+	      
+	   			<div id="container">  
+	            <div id="left_side" class="left_side"><p><!--<img src="../img/mainmall/logo_01.png"></img>-->
+	            	<span class="mui-icon iconfont icon-logo" ></span>
+	            </p></div>  
+	            <div id="content" class="content">
+	            	<div class="search">
+				      <div class="search_w">
+				          <input type="text" id="searchoptiontxt" value="" placeholder="请输入搜索关键字" />
+				      </div>
+				  	</div>
+	            </div>  
+	            <div id="right_side" class="right_side">
+	            	<a class="mui-icon iconfont icon-xiaoxi1 "></a>
+	            </div>  
+	        	</div>  
+	            
+	        </header>
+			
+			
+			
+			
+			<div class="mui-scroll-wrapper">
+			    <div class="mui-scroll">
+			
+			<div id="slider" class="mui-slider ">
+								<div  id="loopslide" class="mui-slider-group mui-slider-loop ">
+									
+								</div>
+								<div class="mui-slider-indicator mui-text-center" id="sliderindicator">
+								</div>
+							</div>
+						<!--</div>-->
+					     
+					        
+							        <div class="nav_mian gray_line white_bg" >
+						    </div>
+						    
+						    <div class="new_warp"> 
+						    
+						      <div class="new_cont">
+						          <div class="txtMarquee-top">
+			<div class="hd">
+				<a class="next"></a>
+				<a class="prev"></a>
+			</div>
+			<div class="bd">
+				<ul class="infoList newslistul">
+					
+				</ul>
+			</div>
+		</div>
+						      </div>
+				  			</div>
+  					
+  					<!--广告-->
+					<div class="banner_w mag_bottom"><img src="../img/mainmall/banner_x_06.png"  /> </div>
+					
+					
+					<!--楼层-->
+					<div class="foor_warp white_bg">
+					    <div class="best_setitle" ><span></span><p>热销新品</p>
+					    	<div class="more_r">
+					    		<font class="iconfont">&#xe615;</font>
+					    		<em >更多</em>
+					    	</div>
+					    </div>
+					    <div class="foor_list">
+					        <ul class="mui-table-view mui-grid-view mui-grid-9 w hotsaleul">
+						   
+						  </ul>
+					    </div>
+					</div>
+					
+					
+					<!--猜你喜欢-->
+					<div class="like_warp">
+					    <!--<div class="like_title"><p>推荐店铺</p></div>-->
+					    <div class="padddiv">
+				    		<div class="hotrecommd">
+				    		<!--<div class="mui-pull-left linebgcs"></div>-->
+				    		
+				    			
+				    			<div class="spancls">
+				    				↑<em >为您推荐</em>
+				    			</div>
+				    		</div>
+				    		
+				    		<!--<div class="mui-pull-right linebgcs"></div>-->
+				    	</div>
+					    <div class="like_list">
+					        <ul class="homepagelikelist">
+					            
+					        </ul>
+					    </div>
+					  	</div>
+				
+	     </div>
+				</div>
+</div>
+</body>
+
+	<script src="../js/mui.min.js"></script>
+	<script>
+	
+		
+		//request netdata  ":" + commPort +
+	var reqUrl ="Leather/Home/AjaxService/SelSlideMainData.ashx";
+//		var hostoryWebView = null;
+		var dataParamsIn = {
+			IndustryID:industryId,
+			CompanyID:-100,
+			SiteID:1,
+			LevelID:3
+		}
+		
+		var idxSel = 0;
+		
+		mui.init({
+			swipeBack:false //启用右滑关闭功能
+		});
+		
+//		console.log("==========");
+		mui('.mui-scroll-wrapper').scroll({
+			 scrollY: true,
+			  scrollX: false,
+			   startX: 0,
+			    startY: 0, 
+			     indicators: true,
+			     deceleration:0.0006,
+			      bounce: false
+		});
+		
+//		var hostoryWebView = null;
+		mui.plusReady(function () {
+//		    plus.nativeUI.closeWaiting();
+//		    //显示当前页面
+//		    mui.currentWebview.show();
+			
+//			sInputOptionsTx.addEventListener("tap",searClick,false);
+//			var curWebView = plus.webview.currentWebview();
+//			hostoryWebView  = plus.webview.getWebviewById('mainhomesearch.html');
+//			function searClick(){
+			
+			});
+			
+			getNewsScroll();
+			function getNewsScroll(){
+					var reqNewurl = "Leather/Home/AjaxService/SelFindNewsListData.ashx";
+				var newDataParms = {
+					MID:industryId,
+					pageSize:6,
+					curPage:1
+				}
+				
+			ajax_login_other(reqNewurl,newDataParms,getNewsScrollLsCallback);
+			}
+			
+			getHotNetData();
+			
+			var sInputOptionsTx = document.getElementById("searchoptiontxt");
+			sInputOptionsTx.addEventListener('focusin',function(){
+//					sInputOptionsTx.value = ""
+					console.log("tap-----");
+				
+	//				curWebView.clo;
+//					console.log(hostoryWebView);
+//					if(hostoryWebView){
+//						hostoryWebView.show();
+//					}
+					mui.openWindow({
+						url:"/Home/mainSelSearch.html",
+						id:'mainSelSearch.html',
+	//					waiting{
+	//						autoShow:false
+	//					},
+						createNew:false
+					});	
+				});
+			
+		function getNewsScrollLsCallback(oResNewsData){
+			var resNewsData =JSON.parse(oResNewsData);
+			console.log(resNewsData.news.length +"=================");
+			var newsStr = "";
+			var newsArrScroll = [];
+			if (resNewsData.news!= undefined) {
+				
+				for (var i =0;i< resNewsData.news.length;i++) {
+					var newsItem = resNewsData.news[i];
+					newsStr += '<li><a href="#" target="_blank">'+newsItem.NewsTitle+'<input type="hidden" value="'+newsItem.NewsID+'"/></a></li>';
+				}
+			}
+//			console.log(newsStr);
+			newsArrScroll.push(newsStr);
+			document.querySelector('.newslistul').innerHTML = newsArrScroll.join('');
+			
+//			console.log($(".txtMarquee-top"));
+			$(".txtMarquee-top").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+		}
+		
+		mui('.newslistul').on('tap','li',function(){
+		  		var avlu = this.querySelector('input[type="hidden"]').getAttribute("value");
+		    	var iIdx = Number(avlu);
+		    	idxSel++;
+//		    	console.log('-------------' + avlu);
+		      	mui.openWindow({ 	//跳转
+								url:"../findsprod/dtnewhome.html",
+								id:'dtnewhome.html',
+								extras:{
+											jobobj:iIdx,
+											selIdx:idxSel
+										},
+								createNew:false
+							});
+				
+		}) 
+		
+		
+		
+			//得到热门数据
+			function getHotNetData(){
+				var likeReqUrl = "Leather/Home/AjaxService/SelHotSaleData.ashx";
+				var likeDataParams = {
+					MID:industryId,
+					pageSize:6,
+					curPage:1
+				};
+//				console.log("===="+commUrl+"/" + likeReqUrl);
+//				console.log("=======hot===" + JSON.stringify(likeDataParams));
+				ajax_login_other(likeReqUrl,likeDataParams,getLikeResDataCallback);
+			}
+		
+		function offFoucsNew(selIndx){
+			
+			mui('.newslistul').off('tap','li',function(){
+			  
+			},false);
+//			console.log("============selIndx============="+selIndx);
+			var iSelIndx = Number(selIndx);
+			var numb = selIndx*60;
+//			console.log("============numb============="+numb);
+			$(".txtMarquee-top").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:numb});
+		}
+		
+		
+		function getLikeResDataCallback(oResLikeData){
+			var resLikeData =JSON.parse(oResLikeData);
+//			console.log("like---" + );
+//			if(resLikeData != "-1" && resLikeData != -1){
+			var arrLike = [];
+			var likeStr = "";
+			for (var i=0;i<resLikeData.like.length; i++) {
+				var itemLike = resLikeData.like[i];
+				var saleAmout = Number(itemLike.SoldAmount);
+				likeStr += '<li >\
+					                <dl>\
+					                    <dt><img src="'+commUrl  + itemLike.ImgFileURL+'" /></dt>\
+					                    <dd class="content-title_p">\
+					                        <p class="controllinemax content-title_p">'+itemLike.ProductName+'</p>\
+					                        <p ><span class="txtblock">￥'+itemLike.CustomerSalePrice+'</span><font>'+saleAmout+'人付款</font></p>\
+					                        <input type="hidden"  value="'+ itemLike.ProductID +"," + itemLike.CompanyID+'"/>\
+					                    </dd>\
+					                </dl>\
+					            </li>';
+			}
+			arrLike.push(likeStr);
+//			console.log("------" + likeStr);
+			document.querySelector('.homepagelikelist').innerHTML = arrLike.join('');
+			
+			
+			
+			var hotsaleStr ="";
+			var hotSaleArr = [];
+			for (var i = 0; i < resLikeData.hotsale.length; i++) {
+				var itemHotSale = resLikeData.hotsale[i];
+				hotsaleStr += '<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6 ">\
+							        <a href="#" >\
+							            <dl >\
+						                    <dt><img src="'+commUrl +itemHotSale.ImgFileURL+'"/></dt>\
+						                    <dd >\
+						                        <p class="controllinemax content-title_p">'+itemHotSale.ProductName+'</p>\
+						                        <p ><span>￥'+itemHotSale.CustomerSalePrice+'</span></p>\
+						                        <input type="hidden"  value="'+ itemHotSale.ProductID +"," + itemHotSale.CompanyID+'"/>\
+						                    </dd>\
+						                </dl>\
+							        </a>\
+							    </li>';
+			}
+			
+//			console.log()
+			hotSaleArr.push(hotsaleStr);
+//			console.log("hot------" +hotsaleStr);
+			document.querySelector('.hotsaleul').innerHTML = hotSaleArr.join('');
+			
+			mui('.hotsaleul').on('tap','li',function(){
+			  	var avlu = this.querySelector('input[type="hidden"]').getAttribute("value");
+//				console.log("---------asecond.click");
+				mui.openWindow({
+						url:'../products/productdetail.html',
+						id:'products/productdetail.html',
+						extras:{
+						    pid:avlu
+						    },
+						  	createNew:false
+						});
+			}) 
+		}
+		
+		
+		mui('.homepagelikelist').on('tap','li',function(){
+			  	var avlu = this.querySelector('input[type="hidden"]').getAttribute("value");
+				mui.openWindow({
+						url:'../products/productdetail.html',
+						id:'products/productdetail.html',
+						extras:{
+						    pid:avlu
+						    },
+						  	createNew:false
+						});
+			}); 
+		
+		function getNetDataCallback(oCData){
+//			console.log("data--" +cData.length)
+			var cData = JSON.parse(oCData);
+			if(cData!=0&&cData!='0')
+			{
+				
+			
+				var slideLoopDiv = document.querySelector("#loopslide");
+				
+				var slideindcator = document.getElementById("sliderindicator");
+				if(cData.length > 1){
+					var divHtml = '<div class="mui-slider-item mui-slider-item-duplicate ">\
+											<a href="#">\
+												<img src="'+ commUrl+ cData[cData.length-1].ImgSRC+'">\
+											</a>\
+										</div>';
+					for (var i = 0; i< cData.length; i++) {
+	//					console.log("i----" + i);
+						if(cData[i].ImgSRC != undefined){
+							
+							var divNew = '<div class="mui-slider-item">\
+												<a href="#">\
+													<img src="'+ commUrl + cData[i].ImgSRC+'">\
+												</a>\
+											</div>';
+							divHtml += divNew;
+						}
+					}
+					
+					divHtml += '<div class="mui-slider-item mui-slider-item-duplicate">\
+											<a href="#">\
+												<img src="'+ commUrl + cData[0].ImgSRC+'">\
+											</a>\
+										</div>';
+					slideLoopDiv.innerHTML += divHtml;
+	//				console.log("====" + divHtml);
+					
+					slideindcator.innerHTML = "";
+					for (var j = 0; j< cData.length;j++) {
+						if(j == 0 ){
+							slideindcator.innerHTML +='<div class="mui-indicator mui-active"></div>';
+						}else{
+							slideindcator.innerHTML += '<div class="mui-indicator "></div>'
+						}
+					}
+				}else{
+	//				slideLoopDiv.removeChild(true);
+					if(cData[0]!=undefined&&cData[0].ImgSRC != undefined)
+					{
+						var divTmp = document.createElement("div");
+						divTmp.className = "mui-slider-item";
+						divTmp.innerHTML = '<a href="#">\
+													<img src="'+ commUrl + ":" + commPort + cData[0].ImgSRC+'">\
+											</a>';
+					}
+					
+					slideLoopDiv.appendChild(divTmp);
+					slideindcator.innerHTML +='<div class="mui-indicator mui-active"></div>';
+				}
+				
+				var slider = mui("#slider");
+					slider.slider({
+						interval: 2000
+					});
+			}
+		}
+		
+//		document.getElementById("ajaxbtn").addEventListener("tap",tmpGetNetData,false);
+		tmpGetNetData();
+		function tmpGetNetData(){
+//			console.log("requrl--" + reqUrl);
+//			console.log("dataParamsIn--" + JSON.stringify(dataParamsIn));
+			//get net result data and println for debug
+			ajax_login_other(reqUrl,dataParamsIn,getNetDataCallback);
+		}
+		
+		mui('.best_setitle').on('tap','em',function(){
+			
+			var id = 'productsls';
+//					var title = categoryA.innerText;
+			var href = 'products.html';
+			
+		  	mui.openWindow({
+						id:id,
+						url:href,
+						extras:{
+      						//自定义扩展参数，可以用来处理页面间传值
+//    						parentId:cParentId, //传父类id
+//    						categoryId:cCategoryId //传子类id
+    					},
+						createNew:false
+					})
+		}) 
+		
+		function reStartScroll(){
+			
+			$(".txtMarquee-top").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+		}
+		
+		function lostFocusInput(){
+			document.querySelector('#searchoptiontxt').blur();
+			
+		}
+	</script>
+</html>
