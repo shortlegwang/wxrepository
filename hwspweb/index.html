@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>荷味食品</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.css"/>
     <link rel="stylesheet" type="text/css" href="css/own.css"/>
    	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
    	<link rel="stylesheet" href="css/slogcommon.css" />
-   	<link rel="stylesheet" href="path/to/weui/dist/style/weui.min.css"/>
    	
    	<style type="text/css">
 		.mui-active .mui-icon,
@@ -27,7 +26,16 @@
 </head>
 <body class="own-gray-color"> 
     
-    
+   <!--
+   	作者：892355966@qq.com
+   	时间：2016-10-17
+   	描述：fdfsdf
+   -->
+   	<div >
+   	<iframe src="barItem/mallHome.html" style="width: 100%;height: 800px;">
+   	</div>	
+   		
+   	</iframe>
     <nav class="mui-bar mui-bar-tab navbgmy ">
         <a class="mui-tab-item mui-active my-home-test" href="barItem/mallHome.html">
             <span class="mui-icon iconfont icon-homeicon" ></span>
@@ -39,16 +47,13 @@
         </a>
         <a class="mui-tab-item my-find-test" href="barItem/findinmall.html">
             <span class="mui-icon iconfont icon-founicon" ><!--<span class="mui-badge"></span>--></span>
-            <span class="mui-tab-label">发现</span>
+            <span class="mui-tab-label">新闻活动</span>
         </a>
         <a class="mui-tab-item my-cart-test" href="cart/cartHome.html">
             <span class="mui-icon iconfont icon-buyicon "><span class="mui-badge gwcnum nodisplaybtn">5</span></span>
-            <span class="mui-tab-label">购物车</span>
+            <span class="mui-tab-label">服务中心</span>
         </a>
-        <a class="mui-tab-item my-mine-test" href="barItem/perindex.html">
-            <span class="mui-icon iconfont icon-myicon"><!--<span class="mui-badge">--></span></span>
-            <span class="mui-tab-label">我的</span>
-        </a>
+        
     </nav>
     
     
@@ -59,8 +64,10 @@
     	swipeBack:true
     })
     
+    
+    
     var navTitle = null;
-//	var mainWebview = null;
+	var mainWebview = null;
 	var curBarItemWebview = null;
 	var loginwebview = null;
 		
@@ -68,6 +75,7 @@
 	var barItemArray = ['barItem/mallHome.html','barItem/category.html','barItem/findinmall.html','cart/cartHome.html','barItem/perindex.html'];
 	var selIdx = 0;//默认第一个选中
 	mui.plusReady(function(){
+		mainWebview = plus.webview.currentWebview();
 		initIndexView();
 	});
 	
@@ -97,7 +105,7 @@
 					}
 				});
 				barItemWebviewArray[i].hide();
-//				mainWebview.append(barItemWebviewArray[i]);
+				mainWebview.append(barItemWebviewArray[i]);
 			}
 			barItemWebviewArray[0].show();
 			curBarItemWebview = barItemWebviewArray[0];
